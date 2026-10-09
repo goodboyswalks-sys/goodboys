@@ -10,7 +10,7 @@ export default function EnquiryForm() {
   catch(e){setState("error");setMessage(e instanceof Error?e.message:"Please try again.");}
  }
  return <form onSubmit={submit} className="enquiry">
- <div className="form-grid"><label>Your name<input name="name" autoComplete="name" required maxLength={100}/></label><label>Email<input name="email" type="email" autoComplete="email" required maxLength={254}/></label><label>Dog’s name<input name="dog" required maxLength={100}/></label><label>Postcode / ZIP<input name="postcode" autoComplete="postal-code" required maxLength={20}/></label></div>
+ <div className="form-grid"><label>Your name<input name="name" autoComplete="name" required maxLength={100}/></label><label>Email<input name="email" type="email" autoComplete="email" inputMode="email" autoCapitalize="none" spellCheck={false} required maxLength={254}/></label><label>Dog’s name<input name="dog" required maxLength={100}/></label><label>Postcode<input name="postcode" autoComplete="postal-code" autoCapitalize="characters" required maxLength={20}/></label></div>
  <label>What are you looking for?<select name="service" required defaultValue=""><option value="" disabled>Choose a service</option>{site.services.map(s=><option key={s.id} value={s.id}>{s.type}</option>)}</select></label>
  <label>A little about your dog<textarea name="notes" rows={3} maxLength={2000} placeholder="Their personality, preferred days, and anything we should know."/></label>
  <div className="trap" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off"/></label></div>

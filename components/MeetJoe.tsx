@@ -36,7 +36,7 @@ export default function MeetJoe() {
       <div className="joe-gallery" tabIndex={0} role="region" aria-label="Joe with dogs over the years. Scroll horizontally to see all twelve photos.">
         {photos.map((photo, index) => (
           <figure className="joe-photo" key={photo.src}>
-            <div className="joe-photo-frame"><img {...photo} loading="lazy" decoding="async" /></div>
+            <div className="joe-photo-frame"><img {...photo} srcSet={`${photo.src.replace(".webp", "-480.webp")} 480w, ${photo.src.replace(".webp", "-800.webp")} 800w, ${photo.src} ${photo.width}w`} sizes="(max-width: 800px) 76vw, 24vw" loading="lazy" decoding="async" /></div>
             <figcaption><span>{String(index + 1).padStart(2, "0")} / GOOD COMPANY</span><span aria-hidden="true">♡</span></figcaption>
           </figure>
         ))}

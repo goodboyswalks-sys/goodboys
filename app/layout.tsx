@@ -1,6 +1,7 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import {siteUrl,isPreview,seoTitle,seoDescription} from '@/lib/seo';
 import './globals.css';
+export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#faf8f1" };
 export const metadata:Metadata={
  metadataBase:new URL(siteUrl),
  title:{default:seoTitle,template:'%s | Goodboys'},
