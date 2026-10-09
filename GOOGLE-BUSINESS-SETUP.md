@@ -17,7 +17,7 @@ These are practical priority areas, not a verified ranking of household income. 
 - Public address: hidden for a service-area business. Google may require a real operating address privately for verification; do not use a virtual office or fabricated address.
 
 ## Profile description draft
-Goodboys is a new dog-walking business serving Cardiff and the Vale of Glamorgan. We’re welcoming bookings for small group walks, one-to-one walks and home visits, with dog pickup arranged for your address. We get to know your dog’s personality, pace and needs before agreeing a routine. Available Monday to Friday, 6am to 8pm. Contact us to discuss coverage, availability and a meet-and-greet.
+Goodboys is a new dog-walking business serving Cardiff and the Vale of Glamorgan. We’re welcoming bookings for small group walks and home visits, with dog pickup arranged for your address. We get to know your dog’s personality, pace and needs before agreeing a routine. Available Monday to Friday, 6am to 8pm. Contact us to discuss coverage, availability and a meet-and-greet.
 
 Confirm you actually intend to offer all these services before publishing. Add your true service area to this description when confirmed. No claims about customers, reviews, years in business, insurance or qualifications have been included.
 

@@ -1,7 +1,7 @@
 # Goodboys SEO — first pass
 
 ## Included
-- Descriptive homepage title and description for dog walking, solo walks and home visits.
+- Descriptive homepage title and description for group dog walking and home visits.
 - Canonical URLs defaulting to https://goodboysuk.com (override NEXT_PUBLIC_SITE_URL if you use www as the primary domain).
 - /sitemap.xml with homepage and privacy page; no private OS or API URLs.
 - /robots.txt pointing to the sitemap. API paths are excluded. The OS uses noindex/nofollow; it remains crawlable so search engines can see that instruction. Authentication and database permissions protect private data, not robots.txt.

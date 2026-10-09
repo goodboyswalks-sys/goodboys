@@ -3,7 +3,7 @@ export const siteUrl=(process.env.NEXT_PUBLIC_SITE_URL || 'https://goodboysuk.co
 export const isPreview=process.env.VERCEL_ENV==='preview'||process.env.VERCEL_ENV==='development';
 export const serviceArea=site.area && site.area!=='Your neighbourhood'?site.area:'';
 export const seoTitle=serviceArea?`Dog Walking in ${serviceArea} | Goodboys`:'Dog Walking & Home Visits | Goodboys';
-export const seoDescription=serviceArea?`Meet Goodboys, a new dog-walking business in ${serviceArea}. Enquire about small group walks, solo walks and home visits for your dog.`:'Meet Goodboys, a new dog-walking business welcoming its first dogs. Enquire about small group walks, solo walks and home visits.';
+export const seoDescription=serviceArea?`Meet Goodboys, a new dog-walking business in ${serviceArea}. Enquire about small group walks and home visits for your dog.`:'Meet Goodboys, a new dog-walking business welcoming its first dogs. Enquire about small group walks and home visits.';
 export function businessSchema(){
  const id=`${siteUrl}/#business`;
  return {'@context':'https://schema.org','@graph':[
