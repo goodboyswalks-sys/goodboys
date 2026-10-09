@@ -16,6 +16,6 @@ export default function EnquiryForm() {
  <div className="trap" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
  <label className="consent"><input name="consent" type="checkbox" value="yes" required/>I agree to Goodboys using these details to reply to my enquiry. <a href="/privacy">Privacy notice</a></label>
  <button className="button" disabled={state==="sending"}>{state==="sending"?"Sending…":"Let’s meet your dog ↗"}</button>
- <p role="status" aria-live="polite">{state==="success"?"You’re on the list! Your enquiry has been received. This is a request, not a confirmed booking.":state==="error"?message:"No commitment. Just the start of a good thing."}</p>
+ <p role="status" aria-live="polite">{state==="success"?"Thanks for being part of our beginning. Your enquiry has been received. We’ll discuss availability with you; this isn’t a confirmed booking.":state==="error"?message:"No commitment. Just the start of a good thing."}</p>
  </form>;
 }
