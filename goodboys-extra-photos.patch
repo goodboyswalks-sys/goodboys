@@ -1,0 +1,42 @@
+--- a/components/MeetJoe.tsx
++++ b/components/MeetJoe.tsx
+@@ -12,6 +12,26 @@
+   { src: "/images/joe/joe-10.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
+   { src: "/images/joe/joe-11.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
+   { src: "/images/joe/joe-12.webp", width: 1400, height: 1050, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-13.webp", width: 787, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-14.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-15.webp", width: 1400, height: 1050, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-16.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-17.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-18.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-19.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-20.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-21.webp", width: 787, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-22.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-23.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-24.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-25.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-26.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-27.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-28.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-29.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-30.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-31.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-32.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
+ ];
+ 
+ export default function MeetJoe() {
+@@ -33,10 +53,10 @@
+         </div>
+       </div>
+       <div className="joe-gallery-heading"><span>JOE &amp; FRIENDS / THROUGH THE YEARS</span><span>Scroll to see more →</span></div>
+-      <div className="joe-gallery" tabIndex={0} role="region" aria-label="Joe with dogs over the years. Scroll horizontally to see all twelve photos.">
++      <div className="joe-gallery" tabIndex={0} role="region" aria-label="Joe with dogs over the years. Scroll horizontally to see all thirty-two photos.">
+         {photos.map((photo, index) => (
+           <figure className="joe-photo" key={photo.src}>
+-            <div className="joe-photo-frame"><img {...photo} srcSet={`${photo.src.replace(".webp", "-480.webp")} 480w, ${photo.src.replace(".webp", "-800.webp")} 800w, ${photo.src} ${photo.width}w`} sizes="(max-width: 800px) 76vw, 24vw" loading="lazy" decoding="async" /></div>
++            <div className="joe-photo-frame"><img {...photo} srcSet={`${photo.src.replace(".webp", "-480.webp")} 480w, ${photo.src.replace(".webp", "-800.webp")} 800w, ${photo.src} ${photo.width}w`} sizes="(max-width: 800px) 76vw, 24vw" loading="lazy" decoding="async" style={photo.width > photo.height ? { objectFit: "contain" } : undefined} /></div>
+             <figcaption><span>{String(index + 1).padStart(2, "0")} / GOOD COMPANY</span><span aria-hidden="true">♡</span></figcaption>
+           </figure>
+         ))}
