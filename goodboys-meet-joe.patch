@@ -1,0 +1,77 @@
+--- a/app/page.tsx
++++ b/app/page.tsx
+@@ -2,14 +2,16 @@
+ import {siteUrl,businessSchema,serviceArea,seoTitle,seoDescription} from "@/lib/seo";
+ import { asset, site } from "@/lib/site";
+ import EnquiryForm from "@/components/EnquiryForm";
++import MeetJoe from "@/components/MeetJoe";
+ export const metadata: Metadata = { alternates: { canonical: "/" }, openGraph: { url: siteUrl, type: "website", siteName: "Goodboys", locale: "en_GB", title: seoTitle, description: seoDescription, images: [{url:"/images/hero.jpg",width:360,height:450,alt:"Happy dog exploring outdoors with Goodboys"}] } };
+ export default function Home() { return <>
+ <a className="skip" href="#main">Skip to content</a>
+-<header><a href="#" aria-label="Goodboys home"><img className="logo" src="/images/logo.png" alt="Goodboys"/></a><nav aria-label="Main navigation"><a href="#walks">The walks</a><a href="#about">Our kind of care</a><a href="#faq">FAQs</a></nav><a className="button small" href="#join">Join the gang ↗</a></header>
++<header><a href="#" aria-label="Goodboys home"><img className="logo" src="/images/logo.png" alt="Goodboys"/></a><nav aria-label="Main navigation"><a href="#walks">The walks</a><a href="#meet-joe">Meet Joe</a><a href="#faq">FAQs</a></nav><a className="button small" href="#join">Join the gang ↗</a></header>
+ <main id="main"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(businessSchema()).replace(/</g,"\\u003c")}}/><section className="hero"><div className="hero-copy"><span className="eyebrow">NEW BUSINESS. GOOD COMPANY.</span><h1>Good walks.<br/>Great dogs.</h1><p>A new local dog-walking business.<br/>Welcoming our first dogs—and their people.{serviceArea&&<><br/><span className="hero-area">Dog walking in {serviceArea}.</span></>}</p><a className="button" href="#join">Find your dog’s happy place ↗</a><div className="hero-note"><span className="spark">✳</span><span>For the muddy paws.<br/>And the good souls attached.</span></div></div><div className="hero-photo"><img src={asset("hero.jpg")} width={360} height={450} alt="Happy dog exploring a grassy trail" fetchPriority="high"/><div className="photo-label">OUTSIDE IS THEIR HAPPY PLACE.</div><div className="sticker">VERY<br/>GOOD<br/>DOGS ↗</div></div></section>
+ <div className="ticker" aria-hidden="true">FRESH AIR <span>✳</span> NEW FRIENDS <span>✳</span> BIG SNIFFS <span>✳</span> GOOD DAYS <span>✳</span> FRESH AIR <span>✳</span></div>
+ <section id="walks" className="section"><div className="section-heading"><div><span className="eyebrow">01 / PICK THEIR ADVENTURE</span><h2>A good day starts<br/>with a good walk.</h2></div><p>Every dog has their own pace.<br/>Let’s find the one that suits yours.</p></div><div className="cards">{site.services.map((s,i)=><article className="service" key={s.id}><div className="service-photo"><img src={asset(s.image)} width={s.image==="ride.jpg"?400:360} height={s.image==="ride.jpg"?385:450} alt={s.type==="Home visits"?"Dog wearing sunglasses, enjoying the breeze":"Dogs enjoying the outdoors"} loading="lazy"/><span className="service-tag">0{i+1} / {s.type}</span></div><div className="service-copy"><h3>{s.name}</h3><p>{s.description}</p><div className="service-meta"><span>{s.duration}</span><span>{s.price}</span></div><a href="#join">Tell us what they need <span>↗</span></a></div></article>)}</div></section>
+-<section id="about" className="about"><div className="about-photo"><img src={asset("trail.jpg")} width={360} height={450} alt="Dog bounding down a trail carrying a stick" loading="lazy"/><span className="caption">LESS SCROLLING. MORE STROLLING.</span></div><div className="about-copy"><span className="eyebrow">02 / GOOD PEOPLE. GOOD DOGS.</span><h2>A new business.<br/>A good beginning.</h2><p>{site.intro}</p><div className="values"><div><span>↗</span><h3>Dog first. Always.</h3><p>We start with their personality, pace and comfort.</p></div><div><span>✳</span><h3>A familiar face.</h3><p>Get to know who’s holding the other end of the lead.</p></div><div><span>♡</span><h3>Let’s talk it through.</h3><p>Discuss routines, handling and expectations before the first walk.</p></div></div><a className="text-link" href="#join">Meet your next walking buddy ↗</a></div></section>
++<section id="about" className="about"><div className="about-photo"><img src={asset("trail.jpg")} width={360} height={450} alt="Dog bounding down a trail carrying a stick" loading="lazy"/><span className="caption">LESS SCROLLING. MORE STROLLING.</span></div><div className="about-copy"><span className="eyebrow">02 / GOOD PEOPLE. GOOD DOGS.</span><h2>A new business.<br/>A good beginning.</h2><p>{site.intro}</p><div className="values"><div><span>↗</span><h3>Dog first. Always.</h3><p>We start with their personality, pace and comfort.</p></div><div><span>✳</span><h3>A familiar face.</h3><p>Get to know who’s holding the other end of the lead.</p></div><div><span>♡</span><h3>Let’s talk it through.</h3><p>Discuss routines, handling and expectations before the first walk.</p></div></div><a className="text-link" href="#meet-joe">Meet your next walking buddy ↗</a></div></section>
++<MeetJoe/>
+ <section className="section process"><span className="eyebrow">03 / FROM HELLO TO LET’S GO</span><h2>Three steps.<br/>A whole lot of tail wags.</h2><div className="steps">{[["01","Tell us about your dog","Their quirks, their routine and their favourite kind of day."],["02","Have a proper hello","We’ll arrange a meet-and-greet and chat about the right fit."],["03","Make room for adventure","Agree your walking routine, then let the good days begin."]].map(([n,t,d])=><div key={n}><span>{n} ↗</span><h3>{t}</h3><p>{d}</p></div>)}</div></section>
+ <section className="section coverage"><span className="eyebrow">LOCAL WALKS. GOOD COMPANY.</span><h2>Cardiff &amp; the Vale.</h2><p>Welcoming bookings for dog walks and home visits across these areas. Pickup availability is confirmed for your address when we arrange your routine.</p><ul>{site.coverage.map(area=><li key={area}>{area}</li>)}</ul></section>
+ <section id="faq" className="section faq"><div><span className="eyebrow">04 / GOOD QUESTIONS</span><h2>A few things<br/>you might wonder.</h2></div><div>{[["Where do you walk?",serviceArea ? `We cover ${serviceArea}. Send your postcode and we’ll confirm whether we can cover your address.` : "Send your postcode with your enquiry and we’ll confirm whether we can cover your address."],["Will my dog suit a group walk?","We’ll discuss temperament, handling and comfort at the meet-and-greet before agreeing whether a small group walk is suitable."],["Can I book a regular routine?","Tell us your preferred days and times. We’ll confirm availability and pricing before agreeing any bookings."],["What about rain, heat or cancellations?","We’ll agree weather arrangements, safety considerations and cancellation terms with you before the first booking."],["Is this an instant booking?","No. The form sends an enquiry so we can discuss your dog’s needs and confirm availability together."]].map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></section>
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -6,3 +6,6 @@
+ .coverage{background:#e8eadb}.coverage>p{max-width:650px}.coverage ul{display:flex;gap:12px;flex-wrap:wrap;padding:0;list-style:none}.coverage li{border:1px solid #39544240;border-radius:25px;padding:10px 16px;font-size:13px}.business-contact{font-size:13px!important}.business-contact a{text-decoration:underline;}
+ 
+ .cards{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1000px;margin:0 auto;}@media(max-width:800px){.cards{grid-template-columns:1fr;}}
++
++/* Meet Joe: ordered, keyboard-scrollable personal photo album. */
++.meet-joe{overflow:hidden}.joe-intro{display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:start;margin-bottom:48px}.joe-intro h2{margin-bottom:16px}.joe-subtitle{color:var(--forest);font-size:19px}.joe-bio{max-width:540px;padding-top:8px}.joe-bio-label{display:inline-block;border:1px solid #39544240;border-radius:20px;padding:7px 12px;font-size:10px;letter-spacing:1px;margin-bottom:18px}.joe-bio p{font-size:16px}.joe-gallery-heading{display:flex;justify-content:space-between;gap:20px;margin-bottom:18px;font-size:10px;letter-spacing:1.5px}.joe-gallery{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 0 20px;scrollbar-color:var(--forest) #e8eadb;scrollbar-width:thin;overscroll-behavior-x:contain}.joe-photo{flex:0 0 calc((100% - 60px)/4);min-width:0;margin:0;scroll-snap-align:start}.joe-photo-frame{height:340px;overflow:hidden;border-radius:6px;background:#e8eadb}.joe-photo-frame img{width:100%;height:100%;object-fit:contain}.joe-photo figcaption{display:flex;justify-content:space-between;gap:8px;padding:14px 0;font-size:9px;letter-spacing:1px;color:var(--forest)}.joe-photo figcaption>span:last-child{font-size:19px;line-height:1}@media(max-width:1100px){.joe-photo-frame{height:280px}}@media(max-width:800px){.joe-intro{grid-template-columns:1fr;gap:12px;margin-bottom:35px}.joe-bio{max-width:none}.joe-photo{flex-basis:76%}.joe-photo-frame{height:390px}.joe-gallery-heading{letter-spacing:.8px;font-size:9px}.joe-gallery-heading>span:last-child{white-space:nowrap}.joe-gallery{gap:16px}}@media(max-width:420px){.joe-photo-frame{height:320px}}
+--- /dev/null
++++ b/components/MeetJoe.tsx
+@@ -0,0 +1,44 @@
++// Photos 01–04 correspond to web pic 1–4. Keep this order.
++const photos = [
++  { src: "/images/joe/joe-01.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-02.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-03.webp", width: 1050, height: 1400, alt: "Joe spending time with dogs" },
++  { src: "/images/joe/joe-04.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-05.webp", width: 1051, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-06.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-07.webp", width: 1400, height: 1400, alt: "Joe spending time with dogs" },
++  { src: "/images/joe/joe-08.webp", width: 1400, height: 1050, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-09.webp", width: 720, height: 972, alt: "Joe spending time with dogs" },
++  { src: "/images/joe/joe-10.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-11.webp", width: 1050, height: 1400, alt: "Joe spending time with a dog" },
++  { src: "/images/joe/joe-12.webp", width: 1400, height: 1050, alt: "Joe spending time with a dog" },
++];
++
++export default function MeetJoe() {
++  return (
++    <section id="meet-joe" className="section meet-joe" aria-labelledby="meet-joe-title">
++      <div className="joe-intro">
++        <div>
++          <span className="eyebrow">THE PERSON AT THE OTHER END OF THE LEAD</span>
++          <h2 id="meet-joe-title">Meet Joe.</h2>
++          <p className="joe-subtitle">A few years. A lot of good dogs.</p>
++        </div>
++        <div className="joe-bio">
++          <span className="joe-bio-label">BIO COMING SOON</span>
++          {/* Replace this paragraph with Joe's approved bio. */}
++          <p>Hi, I’m Joe, the person behind Goodboys. These are a few personal photos of me with dogs over the years. My full story will be here soon—in the meantime, say hello and tell me about your dog.</p>
++          <a className="text-link" href="#join">Say hello to Joe ↗</a>
++        </div>
++      </div>
++      <div className="joe-gallery-heading"><span>JOE &amp; FRIENDS / THROUGH THE YEARS</span><span>Scroll to see more →</span></div>
++      <div className="joe-gallery" tabIndex={0} role="region" aria-label="Joe with dogs over the years. Scroll horizontally to see all twelve photos.">
++        {photos.map((photo, index) => (
++          <figure className="joe-photo" key={photo.src}>
++            <div className="joe-photo-frame"><img {...photo} loading="lazy" decoding="async" /></div>
++            <figcaption><span>{String(index + 1).padStart(2, "0")} / GOOD COMPANY</span><span aria-hidden="true">♡</span></figcaption>
++          </figure>
++        ))}
++      </div>
++    </section>
++  );
++}
