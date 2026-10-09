@@ -1,16 +1,14 @@
-# Add 20 photos to Meet Joe
+# Joe photo captions
 
-All 20 supplied photos are appended to the existing album. The original web pic 1–4 stay first. This is 32 photos total, with responsive WebP variants and lazy loading.
+Adds the supplied captions and alt text to 29 photos. Removes photos 07, 23 and 30 from the website gallery. Remaining photos retain their original numbers and order.
 
-## GitHub website upload (simplest)
-Upload the included components/MeetJoe.tsx and public/images/joe/ files into the matching folders of your existing repository, replacing MeetJoe.tsx. Keep the existing joe-01 to joe-12 images. Commit the upload so Vercel redeploys. Do not upload the .patch or this README into the site.
+## GitHub browser upload
+Upload the included components/MeetJoe.tsx and app/globals.css into matching folders of your existing project, replacing the two files. Commit to deploy on Vercel. This CSS includes the latest mobile and Meet Joe layout fixes.
 
 ## Command-line alternative
-From your project root:
+From the project root run:
+git apply --check /path/to/goodboys-photo-captions.patch
+git apply /path/to/goodboys-photo-captions.patch
+Then commit and push. This diff expects the latest layout fix and the 32-photo update from this conversation.
 
-git apply --check /path/to/goodboys-extra-photos.patch
-git apply /path/to/goodboys-extra-photos.patch
-
-Then copy the included public/images/joe files into your existing public/images/joe folder, commit and push. Use one method, not both.
-
-No Supabase or environment changes. This update does not include the earlier layout fix; apply that separately if you have not done so already.
+No new images or Supabase changes. Photos 07, 23 and 30 are no longer rendered. To also remove their files from your repository, delete joe-07.webp, joe-07-480.webp, joe-07-800.webp and the corresponding three files for 23 and 30 under public/images/joe. Original uploaded photographs are unchanged.
