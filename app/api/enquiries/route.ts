@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { sameOrigin } from "@/lib/request-origin.mjs";
 import { validateEnquiry } from "@/lib/validation.mjs";
 export async function POST(request: NextRequest) {
  const origin=request.headers.get("origin");
- if(!origin || origin!==request.nextUrl.origin) return NextResponse.json({error:"Request not allowed."},{status:403});
+ if(!sameOrigin(origin,request.headers.get("host"))) return NextResponse.json({error:"Request not allowed."},{status:403});
  if(!request.headers.get("content-type")?.includes("application/json"))return NextResponse.json({error:"JSON required."},{status:415});
  const raw=await request.text(); if(new TextEncoder().encode(raw).length>12000)return NextResponse.json({error:"Request too large."},{status:413});
  let data;try{data=JSON.parse(raw);}catch{return NextResponse.json({error:"Invalid request."},{status:400});}

@@ -1,4 +1,6 @@
 # GOODBOYS
+
+**Includes Goodboys OS at `/os`. Start with [OS-SETUP.md](OS-SETUP.md) for owner login, enquiries, clients, calendar, business figures and your phone home-screen shortcut.**
 A Next.js App Router + TypeScript website designed for GitHub and Vercel, with private Supabase enquiries and optional Supabase image storage.
 
 ## Start locally
