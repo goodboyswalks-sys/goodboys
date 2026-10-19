@@ -27,3 +27,6 @@
 
 /* Photo captions wrap naturally at desktop and phone widths. */
 .joe-photo figcaption{align-items:flex-start;line-height:1.65;letter-spacing:0;font-size:12px}.joe-photo figcaption>span:first-child{flex:1;min-width:0}.joe-photo figcaption>span:last-child{flex-shrink:0;padding-top:3px}
+
+/* October 19: supplied header logo and hero photograph. */
+.website-header>a:first-child{flex-shrink:0}.website-header .logo{width:260px;height:auto;object-fit:contain}.hero-photo>img{object-position:center bottom}@media(max-width:1000px) and (min-width:801px){.website-header .logo{width:210px}.website-header{gap:16px}.website-header .site-nav{gap:16px}}@media(max-width:800px){.website-header .logo{width:min(220px,58vw)}.hero-photo>img{object-position:center bottom}}
