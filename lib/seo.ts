@@ -7,7 +7,7 @@ export const seoDescription=serviceArea?`Meet Goodboys, a new dog-walking busine
 export function businessSchema(){
  const id=`${siteUrl}/#business`;
  return {'@context':'https://schema.org','@graph':[
-  {'@type':'Organization','@id':id,name:site.name,url:siteUrl,logo:`${siteUrl}/images/logo.png`,description:seoDescription,telephone:site.phoneHref,...(site.email?{email:site.email}:{}),...(serviceArea?{areaServed:{'@type':'Place',name:serviceArea}}:{})},
+  {'@type':'Organization','@id':id,name:site.name,url:siteUrl,logo:`${siteUrl}/images/refresh/wordmark.webp`,description:seoDescription,telephone:site.phoneHref,...(site.email?{email:site.email}:{}),...(serviceArea?{areaServed:{'@type':'Place',name:serviceArea}}:{})},
   {'@type':'WebSite','@id':`${siteUrl}/#website`,url:siteUrl,name:site.name,publisher:{'@id':id},inLanguage:'en-GB'},
   ...site.services.map(s=>({'@type':'Service','@id':`${siteUrl}/#service-${s.id}`,name:s.type,serviceType:s.type,description:s.description,provider:{'@id':id},url:`${siteUrl}/#walks`,...(serviceArea?{areaServed:{'@type':'Place',name:serviceArea}}:{})}))
  ]};

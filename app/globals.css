@@ -30,3 +30,36 @@
 
 /* October 19: supplied header logo and hero photograph. */
 .website-header>a:first-child{flex-shrink:0}.website-header .logo{width:260px;height:auto;object-fit:contain}.hero-photo>img{object-position:center bottom}@media(max-width:1000px) and (min-width:801px){.website-header .logo{width:210px}.website-header{gap:16px}.website-header .site-nav{gap:16px}}@media(max-width:800px){.website-header .logo{width:min(220px,58vw)}.hero-photo>img{object-position:center bottom}}
+
+/* Supplied Goodboys identity and full-image editorial frames. */
+.site-icon{flex-shrink:0;width:22px;height:22px}
+.website-header{gap:24px}.website-header .logo{width:230px}
+.website-header .site-nav{gap:24px}.site-nav a{gap:9px;font-weight:600;font-size:13px}
+.site-nav .nav-enquiry{padding:10px 17px;border:1px solid #39544240;border-radius:28px}
+.header-badge{flex-shrink:0;width:78px;height:78px}.header-badge img{height:100%;object-fit:contain}
+.hero{align-items:stretch;min-height:0}.hero h1{font-size:clamp(52px,6.2vw,96px);letter-spacing:-5px}
+.hero-copy{padding-top:60px;padding-bottom:50px}
+.hero-photo{display:flex;align-items:center;background:#e8eadb;padding:28px}
+.hero-photo>img{height:auto;width:100%;max-height:760px;object-fit:contain}
+.photo-label,.caption{position:static;display:block;font-size:10px;letter-spacing:1.5px;line-height:1.6}
+.hero-photo{flex-direction:column;justify-content:center;gap:18px}.photo-label{color:var(--forest)}
+.cards{grid-template-columns:repeat(3,minmax(0,1fr));max-width:none;align-items:stretch}
+.service{display:flex;flex-direction:column;border-radius:12px;background:#f3f2e9}
+.service-photo{height:auto;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:18px 18px 58px;background:#e8eadb}
+.service-photo img{height:100%;width:100%;object-fit:contain}.service:hover img{transform:none}
+.service-copy{display:flex;flex-direction:column;flex:1}.service-copy h3{font-size:clamp(22px,2.2vw,30px)}
+.service-copy p{min-height:0}.service-meta{margin-top:auto;gap:10px}.service-copy>a{min-height:44px;align-items:center}
+.coming-soon{align-self:flex-start;background:var(--lime);border-radius:24px;padding:7px 12px;font-size:11px;font-weight:700;margin-bottom:16px}
+.about-photo{display:flex;flex-direction:column;justify-content:center;padding:32px;gap:20px;background:#304a38}
+.about-photo img{height:auto;width:100%;object-fit:contain;max-height:none}.caption{color:var(--paper)}
+.trust-strip{display:flex;justify-content:center;flex-wrap:wrap;gap:24px 50px;padding:28px 6%;background:#e8eadb}
+.trust-strip>span{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600}.trust-strip .site-icon{width:28px;height:28px}
+@media(min-width:801px) and (max-width:1100px){.website-header{gap:16px;padding-inline:4%}.website-header .logo{width:180px}.website-header .site-nav{gap:14px}.site-nav a{font-size:12px;gap:6px}.header-badge{width:60px;height:60px}.site-nav .nav-enquiry{padding-inline:10px}.site-icon{width:19px;height:19px}.hero-copy{padding-inline:8%}.hero h1{letter-spacing:-3px}}
+@media(max-width:800px){
+ .website-header{gap:12px}.website-header .logo{width:min(180px,44vw)}.header-badge{width:50px;height:50px;margin-left:0;order:2}.menu-toggle{order:0;margin-left:auto}.website-header .site-nav{order:3}.site-nav .nav-enquiry{border-radius:0;border:0;border-bottom:1px solid #39544220;padding:12px 4px}
+ .hero h1{font-size:clamp(49px,12vw,76px);letter-spacing:-3px}.hero-copy{padding:38px 6% 34px}
+ .hero-photo{height:auto;padding:24px 6%;gap:16px}.hero-photo>img{height:auto;max-height:none;object-fit:contain}
+ .cards{grid-template-columns:1fr;max-width:560px}.service-photo{height:auto;aspect-ratio:1/1}.service-copy h3{font-size:27px}
+ .about-photo{height:auto;padding:28px 6%}.about-photo img{height:auto}.site-nav a{font-size:16px}.site-icon{width:22px;height:22px}
+}
+@media(prefers-reduced-motion:reduce){.service-photo img{transition:none}}
